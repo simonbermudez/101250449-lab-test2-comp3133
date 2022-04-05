@@ -1,0 +1,21 @@
+<h1>Missions</h1>
+
+<div>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let mission of missions; let i = index">
+        <mat-card class="mat-elevation-z4" >
+            <mat-card-header>
+              <mat-card-title>{{ mission.mission_name }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="mission.links.mission_patch_small">
+            <mat-card-content>
+              <p>Launch Year: {{ mission.launch_year }}</p>
+              <p>Details: {{ mission.details }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="navigateToDetails(i)">Details</button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+    </div>
+</div>
